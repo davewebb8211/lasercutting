@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+    <_name>Gear Evolvente</_name>
+    <id>org.ekips.filter.gears_evolvente</id>
+    <dependency type="executable" location="extensions">gears_evolvente.py</dependency>
+    <dependency type="executable" location="extensions">inkex.py</dependency>
+    <param name="teeth"       type="int"     min="6"    max="360"    _gui-text="Number of teeth">24</param>
+    <param name="module"      type="float"   min="1.0"  max="16.0"   _gui-text="Module (mm)">1.0</param>
+    <param name="alpha"       type="float"   min="10.0" max="30.0"   _gui-text="Pressure angle">20.0</param>
+    <param name="axletype"    type="enum"                            _gui-text="Axle type">
+        <_item value="1">None</_item>
+        <_item value="2">Parallel key</_item>
+        <_item value="3">Splined joint</_item>
+        <_item value="4"></_item>
+    </param>
+    <param name="axle"        type="float"   min="1.0"  max="30.0"   _gui-text="Axle diameter (mm)">6.0</param>
+    <param name="help"        type="description">Guides</param>
+    <param name="outercircle" type="boolean"                         _gui-text="Draw outer circle">false</param>
+    <param name="pitchcircle" type="boolean"                         _gui-text="Draw pitch circle (recommended)">true</param>
+    <param name="basecircle"  type="boolean"                         _gui-text="Draw base circle">false</param>
+    <param name="rootcircle"  type="boolean"                         _gui-text="Draw root circle">false</param>
+    <effect>
+	<object-type>all</object-type>
+        <effects-menu>
+            <submenu _name="Render"/>
+        </effects-menu>						    		
+    </effect>
+    <script>
+        <command reldir="extensions" interpreter="python">gears_evolvente.py</command>
+    </script>
+</inkscape-extension>
