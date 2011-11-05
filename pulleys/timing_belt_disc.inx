@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+    <_name>Timing Belt Disc</_name>
+    <id>org.ekips.filter.timing_belt_disc</id>
+    <dependency type="executable" location="extensions">timing_belt_disc.py</dependency>
+    <dependency type="executable" location="extensions">inkex.py</dependency>
+    <param name="teeth"       type="int"     min="10"   max="360"    _gui-text="Number of teeth">24</param>
+    <param name="belt"        type="enum"                            _gui-text="Belt type">
+        <_item value="T2.5">T2.5</_item>
+        <_item value="T5">T5</_item>
+        <_item value="T10">T10</_item>
+        <_item value="T20">T20</_item>
+    </param>
+    <param name="axletype"    type="enum"                            _gui-text="Axle type">
+        <_item value="1">None</_item>
+        <_item value="2">Parallel key</_item>
+        <_item value="3">Splined joint</_item>
+        <_item value="4"></_item>
+    </param>
+    <param name="axle"        type="float"   min="1.0"  max="30.0"   _gui-text="Axle diameter (mm)">6.0</param>
+    <param name="help"        type="description">Guides</param>
+    <param name="neutral"     type="boolean"                         _gui-text="Draw neutral axis">false</param>
+    <effect>
+	<object-type>all</object-type>
+        <effects-menu>
+            <submenu _name="Render"/>
+        </effects-menu>						    		
+    </effect>
+    <script>
+        <command reldir="extensions" interpreter="python">timing_belt_disc.py</command>
+    </script>
+</inkscape-extension>
